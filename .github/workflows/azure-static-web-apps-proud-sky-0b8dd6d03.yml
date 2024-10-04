@@ -13,6 +13,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build Job
     strategy:
       matrix:
         node-version: [22.x]
@@ -41,8 +42,8 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Build And Deploy
-        id: builddeploy
+      - name: Deploy
+        id: deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_SKY_0B8DD6D03 }}
